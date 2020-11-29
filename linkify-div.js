@@ -15,6 +15,7 @@ class LinkifyDiv extends HTMLDivElement{
   get innerHTML() {
     return super.innerHTML;
   }
+  
   set innerHTML(html) {
     this.#tmpDiv.innerHTML = html;
     for(this.#tmp of this.#tmpDiv.querySelectorAll('a')){
