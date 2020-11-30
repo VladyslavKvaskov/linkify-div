@@ -1,7 +1,7 @@
 class LinkifyDiv extends HTMLDivElement{
   #linkify = (text) => {
     return text.replace(/([\w+]+\:\/\/)?([\w\d-]+\.)*[\w-]+[\.\:]\w+([\/.\?\=\&\#]?[\w-]+)*\/?/gmi, (a) => {
-      return `<a href="${!a.startsWith('http://') && !a.startsWith('https://') ? `http://${a}` : a}" target="_blank" class="url-from-txt">${a}</a>`;
+      return `<a href="${!a.startsWith('http://') && !a.startsWith('https://') ? `http://${a}` : a}" target="_blank">${a}</a>`;
     });
   }
   #tmpDiv = document.createElement('div');
