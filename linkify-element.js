@@ -29,7 +29,7 @@ class LinkifyElement extends HTMLElement {
       this.fData.append('links', JSON.stringify(this.anchorHrefs));
 
       console.log(location.hostname);
-      fetch(location.hostname === 'linkify-element' ? '../links-info.php' : 'https://linkify-element.vercel.app/links-info.php', {
+      fetch(location.hostname === 'linkify-element' ? '../links-info.php' : 'https://resume.vkvaskov.com/links-info.php', {
           method: 'POST',
           body: this.fData
         }).then(r => r.text())
