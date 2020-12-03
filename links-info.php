@@ -56,7 +56,9 @@
         }
       }
       else{
-        $obj['not_found'] = true;
+        if(empty($obj['favicon'])){
+          $obj['not_found'] = true;
+        }
       }
 
       $json[] = $obj;
