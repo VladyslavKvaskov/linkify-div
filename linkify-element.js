@@ -95,7 +95,7 @@ class LinkifyElement extends HTMLElement {
 
     #urlRegex = /(https?:\/\/[^\s]+)/g;
     #linkify = (text) => {
-        return text.replace(/([\w+]+\:\/\/)?([\w\d-]+\.)*[\w-]+[\.\:]\w+([\/.\?\=\&\#]?[\w-]+)*\/?/gim, (a) => {
+        return text.replace(/([\w]*\:?\/\/)?([\w\d-]+\.)*[\w-]+[\.\:]\w+([\/.\?\=\&\#]?[\w-]+)*\/?/gim, (a) => {
             a = a.trim();
             return `<a href="${!a.startsWith('http://') && !a.startsWith('https://') ? `http://${a}` : a}" target="_blank" class="url-from-txt">${a}</a>`;
         });
